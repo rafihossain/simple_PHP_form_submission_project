@@ -1,9 +1,9 @@
 <h2>simple_PHP_form_submission_project:</h2>
 <h3> Feature's </h3>	
 <p>
-•Report add and retrive.<br>
-•E-mail submission prevent.<br>
-•DataTable sorting and searching.<br>
+• Report add and retrive.<br>
+• E-mail submission prevent.<br>
+• DataTable sorting and searching.<br>
 Technology Used:<br>
  PHP, MySQL, Bootstrap </p>
 
