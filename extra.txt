@@ -1,0 +1,184 @@
+	<!-- <script>
+		$(document).ready(function() {
+
+
+			function showAllUsers() {
+				$.ajax({
+					url: "action.php",
+					type: "POST",
+					data: {
+						action: "view"
+					},
+					success: function(response) {
+						// console.log(response);
+						$("#showUser").html(response);
+						$('#example').DataTable();
+
+					}
+				});
+			}
+
+			showAllUsers();
+
+			//regex validation
+
+			//onlytext
+			// $.validator.addMethod("regex",function(value,element,regexp){
+			//         var re= new RegExp(regexp);
+			//         return this.optional(element) || re.test(value);
+			// });
+
+			//only alphabets and spaces
+			// $.validator.addMethod("regex",function(value,element,regexp){
+			//         var re= new RegExp(regexp);
+			//         return this.optional(element) || re.test(value);
+			//     },"Only Characters from A-z");
+
+			//form validation
+			$("#form-data").validate({
+
+				// Specify the validation rules
+				rules: {
+					amount: {
+						require: true,
+						number: true,
+					},
+					buyer: {
+						require: true,
+						// regex:"/^[a-zA-Z\s]+$/", //only text and spaces
+						number: true,
+						maxlength: 20,
+					},
+					receipt_id: {
+						require: true,
+						regex: "^[a-zA-Z]+$", //only text, 
+					},
+					items: {
+						require: true,
+						// regex:"^[a-zA-Z]+$", //only text
+					},
+					buyer_email: {
+						required: true,
+						email: true,
+					},
+					note: {
+						require: true,
+						maxlength: 30,
+					},
+					city: {
+						require: true,
+						// regex:"/^[a-zA-Z\s]+$/", //only text and spaces
+					},
+					phone: {
+						require: true,
+						number: true,
+					},
+					entry_by: {
+						require: true,
+						number: true,
+					},
+				},
+				// Specify the validation error messages
+				messages: {
+					amount: {
+						required: "Please enter amount!",
+						number: "Please enter only number!",
+					},
+					buyer: {
+						required: "Please enter buyer details!",
+						// regex:"Please enter only text and spaces!",
+						number: "Please enter only number!",
+						maxlength: "Please enter maximum 20 cherecter",
+					},
+					receipt_id: {
+						required: "Please enter receipt_id!",
+						// regex:"Please enter only text!",
+					},
+					items: {
+						required: "Please enter items!",
+						// regex:"Please enter only text!",
+					},
+					buyer_email: {
+						required: "Please enter buyer email address!",
+						email: "Please enter valid email address!",
+					},
+					note: {
+						required: "Please enter note!",
+						maxlength: "Please enter maximum 30 cherecter",
+					},
+					city: {
+						required: "Please enter city!",
+						// regex:"Please enter only text and spaces!",
+					},
+					phone: {
+						required: "Please enter phone number!",
+						number: "Please enter only number!",
+					},
+					entry_by: {
+						required: "Please enter entry number!",
+						number: "Please enter only number!",
+					},
+				},
+
+				submitHandler: function(form) {
+					$(form).ajaxSubmit({
+						url: "action.php",
+						type: "post",
+						data: $(form).serialize(),
+						success: function(response) {
+							console.log(response);
+						}
+					});
+				}
+
+			});
+
+
+			//insert ajax request
+			$("#insert").click(function(event) {
+				event.preventDefault();
+				if ($("#form-data")[0].checkValidity()) {
+					$.ajax({
+						url: "action.php",
+						type: "POST",
+						data: $("#form-data").serialize() + "&action=insert",
+						success: function(response) {
+							Swal.fire({
+								title: 'Report Added Successfully',
+								text: 'Do you want to continue',
+								icon: 'success',
+								confirmButtonText: 'Ok'
+							})
+							$("#exampleModal").modal('hide');
+							$("#form-data")[0].reset();
+							showAllUsers();
+						}
+					});
+				}
+			});
+
+			//insert ajax request
+			// $("#insert").click(function(event){
+			//     if($("#form-data")[0].checkValidity()){
+			//         event.preventDefault();
+			//         $.ajax({
+			//             url : "action.php",
+			//             type : "POST",
+			//             data : $("#form-data").serialize()+"&action=insert",
+			//             success : function(response){
+			//                 Swal.fire({
+			//                     title: 'Report Added Successfully',
+			//                     text: 'Do you want to continue',
+			//                     icon: 'success',
+			//                     confirmButtonText: 'Ok'
+			//                 })
+			//                 $("#exampleModal").modal('hide');
+			//                 $("#form-data")[0].reset();
+			//                 showAllUsers();
+			//             }
+			//         });
+			//     }
+			// });
+
+		});
+	</script> -->
